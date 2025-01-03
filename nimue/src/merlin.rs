@@ -13,6 +13,7 @@ use super::{DefaultHash, DefaultRng, IOPatternError};
 /// it is seeded by a cryptographic random number generator (by default, [`rand::rngs::OsRng`]).
 ///
 /// Every time the prover's sponge is squeeze, the state of the sponge is ratcheted, so that it can't be inverted and the randomness recovered.
+#[derive(Clone)]
 pub(crate) struct ProverRng<R: RngCore + CryptoRng> {
     /// The sponge that is used to generate the random coins.
     pub(crate) sponge: Keccak,
@@ -88,6 +89,7 @@ where
 /// Unless otherwise specified,
 /// [`Merlin`] is set to work over bytes with [`DefaultHash`] and
 /// rely on the default random number generator [`DefaultRng`].
+#[derive(Clone)]
 pub struct Merlin<H = DefaultHash, U = u8, R = DefaultRng>
 where
     U: Unit,
