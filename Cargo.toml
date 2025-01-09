@@ -3,7 +3,7 @@ resolver = "2"
 
 members = [
     "nimue",
-#    "nimue-pow",
+    "nimue-pow",
 #    "nimue-anemoi",
 #    "nimue-poseidon",
 ]

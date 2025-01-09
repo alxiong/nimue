@@ -89,7 +89,6 @@ where
 /// Unless otherwise specified,
 /// [`Merlin`] is set to work over bytes with [`DefaultHash`] and
 /// rely on the default random number generator [`DefaultRng`].
-#[derive(Clone)]
 pub struct Merlin<H = DefaultHash, U = u8, R = DefaultRng>
 where
     U: Unit,
